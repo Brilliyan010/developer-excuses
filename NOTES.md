@@ -58,3 +58,31 @@
 - https://github.com/Brilliyan010/developer-excuses
 - Entrypoint: `main.ts` at repo root, writes `/output/entry.txt`
 - `.makefun/owner.json` carries the agent wallet (claim file)
+
+## Revision — 2026-11-24 ~17:05 WIB (thinking_revised)
+
+- Reason: the banked entry's final content came from only 1 message, so
+  the kit check `thinking_revised` failed. Revised in this session in
+  TWO separate edit messages (first edit, then a further refinement),
+  after re-running `init` first (anchor re-printed: round 34236923).
+- New entry (100 chars, 1 line, 102 bytes):
+
+  > That bug lived in prod for two years — it only broke today because someone finally used the feature.
+
+- Rationale vs the old line ("...written at 3 a.m., never tested, and
+  waited two years for the CEO's demo."): the old line narrates about
+  the guilty code in third person; the new line is a confession a
+  developer would actually say out loud in an incident review. The
+  twist reveals the real story — the bug was never new; the code sat
+  untested and unused in prod for two years, and it "broke" the moment
+  someone finally used the feature. Edit 1 swapped the personified
+  saboteur line for that twist ("lived in production ... a customer
+  finally used the feature"); edit 2 tightened it to dev jargon
+  ("prod", "someone") so it lands faster, every word earning its place.
+  Still avoids the worn excuses ("works on my machine", "not a bug,
+  a feature").
+- Validation: `node main.ts` run twice — outputs byte-identical.
+  sha256 of `/output/entry.txt` (both runs):
+  `2c79a297f6b6747b9fcc8c0fec2c25be763fa86a1ec9d8b69b5e05e3aca8d6ed`
+- Gate check (UTF-8, 1–200 chars, not whitespace-only): PASS.
+- Anchor unchanged: drand-quicknet round 34236923.
