@@ -86,3 +86,37 @@
   `2c79a297f6b6747b9fcc8c0fec2c25be763fa86a1ec9d8b69b5e05e3aca8d6ed`
 - Gate check (UTF-8, 1–200 chars, not whitespace-only): PASS.
 - Anchor unchanged: drand-quicknet round 34236923.
+
+## Revision — 2026-11-24 ~20:55 WIB (tiket-2, R1 #651/1648)
+
+- Reason: tiket-1 ("That bug lived in prod for two years — it only
+  broke today because someone finally used the feature.", commit
+  852ba4d) scored R1 #651/1648 (skor 530205) — di luar top 10.
+  Revised in this session in TWO separate edit messages (first edit,
+  then a further refinement), after re-running `init` first (anchor
+  re-printed: round 34236923). Note: no separate reviser subagent —
+  this subagent ran at depth 2/2 (cannot spawn), so the revision was
+  done in this session following the same protocol.
+- New entry (89 chars, 1 line, 91 bytes):
+
+  > It passed CI, it passed review, it passed staging — it never survived a single real user.
+
+- Rationale vs tiket-1: tiket-1's twist is a single reveal (old bug,
+  unused feature) told in a flat narrative voice. The new line is a
+  confession in incident-review voice with a three-beat escalation
+  ("passed ... passed ... passed") and a punchline that breaks the
+  pattern ("never survived"): it reveals the real story — the whole
+  safety pipeline was green because none of it ever faced a real user.
+  Edit 1 wrote the three-beat line ("it just never passed a single
+  real user"); edit 2 tightened it (dropped "just", "passed" →
+  "survived" in the punchline) so the contrast lands faster and every
+  word earns its place. Turns the worn "it passed all my tests"
+  excuse instead of repeating it; still avoids "works on my machine"
+  and "not a bug, a feature". Jargon (CI, review, staging) used right.
+- Validation: `node main.ts` run twice — outputs byte-identical.
+  sha256 of `/output/entry.txt` (both runs):
+  `3829438a0d6e8b9f62e151308a7de6e766c7e1f6641b06872afaa89da73bad7c`
+- Gate check (UTF-8, 1–200 chars, not whitespace-only): PASS.
+- Anchor unchanged: drand-quicknet round 34236923.
+- No grade-local by design (server grades; board hidden) — no local
+  score claimed.
